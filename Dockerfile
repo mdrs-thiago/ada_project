@@ -1,9 +1,10 @@
-FROM node:14
-RUN apt update && apt-get install python3 python3-pip -y
+FROM nikolaik/python-nodejs:python3.10-nodejs14
+
 WORKDIR /app
-COPY . .
-RUN yarn install --production
-RUN pip3 install streamlit pandas numpy 
+RUN apt update -y 
+COPY . . 
+RUN npm install
+RUN pip3 install streamlit pandas numpy plotly
 EXPOSE 3000 8501
-RUN ["chmod", "+x", "/scripts/runner.sh"]
-ENTRYPOINT ["runner.sh"]
+RUN ["chmod", "+x", "runner.sh"]
+ENTRYPOINT ["./runner.sh"]

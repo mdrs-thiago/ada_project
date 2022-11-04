@@ -1,5 +1,5 @@
 #!/bin/bash
-streamlit run app.py &
+python3 -m streamlit run app.py &
 P1=$!
 npm start &
 P2=$!
