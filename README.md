@@ -21,3 +21,13 @@ This is the necessary stage of the project. The student must be able to create a
 Last step of the project pipeline. Using the aforementioned tables, this script generates a dashboard containing essential info for data visualization. The script uses the `streamlit` framework. In order to run locally, the student should install the package (either using `pip install streamlit` or `conda install streamlit`). To run the application, just type `streamlit run app.py` and access localhost:8501 to view the dashboard. If the second part of the project is done correctly, the dashboard should work like the image below.
 
 ![example](https://github.com/mdrs-thiago/ada_project/blob/492aafd0f66fdb37fec04a4e72c085ca7aba87f1/ada_project_dashboard.png)
+
+## Part 4 - Docker (Optional)
+
+If you want to run this project in Docker, use this branch instead of main. In order to run in docker, use the following instructions:
+
+1. Install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/).
+
+2. Inside workdir, run `docker build -t adaproject:latest .`. Check if any error may occur in this step.
+
+3. Run the container using `docker run -p 3000:3000 -p 8501:8501 adaproject`. Now you should be able to access the API using `localhost:3000/api/ep1` and the dashboard using `localhost:8501`.
